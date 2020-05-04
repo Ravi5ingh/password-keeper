@@ -32,10 +32,10 @@ namespace PasswordKeeper
 
         private void SubmitPassword()
         {
-            if (masterPasswordTextBox.Text == "Drotinm20!")
+            if (masterPasswordTextBox.Text == "cooler=key")
             {
                 this.Visible = false;
-                var passwordKeeperForm = new PasswordKeeperForm("Drotinm20!")
+                var passwordKeeperForm = new PasswordKeeperForm("cooler=key")
                 {
                     Visible = true
                 };
