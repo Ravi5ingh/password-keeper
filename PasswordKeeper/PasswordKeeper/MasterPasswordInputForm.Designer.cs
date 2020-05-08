@@ -38,7 +38,7 @@
             this.masterPasswordSubmitButton.Location = new System.Drawing.Point(512, 31);
             this.masterPasswordSubmitButton.Name = "masterPasswordSubmitButton";
             this.masterPasswordSubmitButton.Size = new System.Drawing.Size(75, 23);
-            this.masterPasswordSubmitButton.TabIndex = 0;
+            this.masterPasswordSubmitButton.TabIndex = 1;
             this.masterPasswordSubmitButton.Text = "Submit";
             this.masterPasswordSubmitButton.UseVisualStyleBackColor = true;
             this.masterPasswordSubmitButton.Click += new System.EventHandler(this.masterPasswordSubmitButton_Click);
@@ -58,7 +58,7 @@
             this.masterPasswordTextBox.Name = "masterPasswordTextBox";
             this.masterPasswordTextBox.PasswordChar = '*';
             this.masterPasswordTextBox.Size = new System.Drawing.Size(491, 20);
-            this.masterPasswordTextBox.TabIndex = 2;
+            this.masterPasswordTextBox.TabIndex = 0;
             this.masterPasswordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.masterPasswordTextBox_KeyDown);
             // 
             // MasterPasswordInputForm
