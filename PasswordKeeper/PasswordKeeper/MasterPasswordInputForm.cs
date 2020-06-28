@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PasswordKeeper
@@ -32,10 +25,10 @@ namespace PasswordKeeper
 
         private void SubmitPassword()
         {
-            if (masterPasswordTextBox.Text == "cooler=key")
+            if (Persistence.CheckMasterPassword(masterPasswordTextBox.Text))
             {
                 this.Visible = false;
-                var passwordKeeperForm = new PasswordKeeperForm("cooler=key")
+                var passwordKeeperForm = new PasswordKeeperForm(masterPasswordTextBox.Text)
                 {
                     Visible = true
                 };

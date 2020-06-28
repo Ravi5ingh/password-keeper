@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PasswordKeeper
@@ -46,18 +41,17 @@ namespace PasswordKeeper
                     Add($"{Encrypt(row.Cells["DomainColumn"].Value.ToString(), _password, _salt)}" +
                     $"----{Encrypt(row.Cells["PasswordColumn"].Value.ToString(), _password, _salt)}");
             }
-            File.WriteAllLines("data", encryptedData);
+            Persistence.SaveEncryptedPasswords(encryptedData);
         }
 
         private void loadData()
         {
-            if(!File.Exists("data"))
+            if(!Persistence.PasswordDataExists)
             {
                 return;
             }
-            var lines = File.ReadAllLines("data");
             var decryptedData = new List<Tuple<string, string>>();
-            foreach(var line in lines)
+            foreach(var line in Persistence.EncryptedPasswordData)
             {
                 var linesParts = line.Split(new[] { "----" }, StringSplitOptions.RemoveEmptyEntries);
                 var domain = Decrypt(linesParts[0], _password, _salt);
