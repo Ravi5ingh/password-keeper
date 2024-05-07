@@ -1,2 +1,4 @@
 PasswordKeeper/PasswordKeeper/bin/
 PasswordKeeper/PasswordKeeper/obj/
+.idea/
+**.user
